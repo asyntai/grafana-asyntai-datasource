@@ -50,4 +50,4 @@ websites. Put your website id in a variable and write `$website` in the
 
 - [Asyntai](https://asyntai.com)
 - [Integration guide](https://asyntai.com/documentation/integrations/grafana/)
-- [Asyntai API reference](https://asyntai.com/documentation/api-reference/)
+- [Asyntai API reference](https://asyntai.com/documentation/api/)
