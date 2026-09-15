@@ -1,0 +1,79 @@
+{
+    "$schema": "https://raw.githubusercontent.com/grafana/grafana/main/docs/sources/developers/plugins/plugin.schema.json",
+    "type": "datasource",
+    "name": "Asyntai AI Chatbot",
+    "id": "asyntai-aichatbot-datasource",
+    "metrics": true,
+    "backend": false,
+    "info": {
+        "description": "Put your Asyntai AI Chatbot numbers on a Grafana dashboard: chats, leads, tickets and the questions visitors ask.",
+        "author": {
+            "name": "Asyntai",
+            "url": "https://asyntai.com"
+        },
+        "keywords": [
+            "chatbot",
+            "ai",
+            "support",
+            "leads",
+            "asyntai"
+        ],
+        "logos": {
+            "small": "img/logo.png",
+            "large": "img/logo.png"
+        },
+        "links": [
+            {
+                "name": "Website",
+                "url": "https://asyntai.com"
+            },
+            {
+                "name": "Documentation",
+                "url": "https://asyntai.com/documentation/integrations/grafana/"
+            },
+            {
+                "name": "Report an issue",
+                "url": "https://github.com/asyntai/grafana-asyntai-datasource/issues"
+            }
+        ],
+        "screenshots": [
+            {
+                "name": "Your chatbot numbers on one dashboard",
+                "path": "img/screenshot-overview.png"
+            },
+            {
+                "name": "Where the questions come from",
+                "path": "img/screenshot-where-from.png"
+            },
+            {
+                "name": "Read any conversation in Grafana",
+                "path": "img/screenshot-conversation.png"
+            }
+        ],
+        "version": "%VERSION%",
+        "updated": "%TODAY%"
+    },
+    "includes": [
+        {
+            "type": "dashboard",
+            "name": "Asyntai overview",
+            "path": "dashboards/overview.json"
+        }
+    ],
+    "routes": [
+        {
+            "path": "asyntai",
+            "url": "https://asyntai.com",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "content": "Bearer {{ .SecureJsonData.apiKey }}"
+                }
+            ]
+        }
+    ],
+    "dependencies": {
+        "grafanaDependency": ">=12.3.0",
+        "plugins": []
+    }
+}

@@ -1,0 +1,297 @@
+{
+  "__inputs": [
+    {
+      "name": "DS_ASYNTAI",
+      "label": "Asyntai AI Chatbot",
+      "description": "The Asyntai data source to read from.",
+      "type": "datasource",
+      "pluginId": "asyntai-aichatbot-datasource",
+      "pluginName": "Asyntai AI Chatbot"
+    }
+  ],
+  "annotations": {
+    "list": []
+  },
+  "editable": true,
+  "graphTooltip": 1,
+  "panels": [
+    {
+      "type": "timeseries",
+      "title": "Chats",
+      "datasource": {
+        "type": "asyntai-aichatbot-datasource",
+        "uid": "${DS_ASYNTAI}"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 0
+      },
+      "id": 1,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "drawStyle": "bars",
+            "fillOpacity": 60,
+            "lineWidth": 0
+          },
+          "min": 0
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": false
+        }
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "resource": "sessions",
+          "format": "timeseries",
+          "groupBy": "none",
+          "datasource": {
+            "type": "asyntai-aichatbot-datasource",
+            "uid": "${DS_ASYNTAI}"
+          }
+        }
+      ],
+      "maxDataPoints": 50
+    },
+    {
+      "type": "timeseries",
+      "title": "Chats by source",
+      "datasource": {
+        "type": "asyntai-aichatbot-datasource",
+        "uid": "${DS_ASYNTAI}"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 0
+      },
+      "id": 2,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "drawStyle": "bars",
+            "fillOpacity": 60,
+            "lineWidth": 0,
+            "stacking": {
+              "mode": "normal"
+            }
+          },
+          "min": 0
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        }
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "resource": "sessions",
+          "format": "timeseries",
+          "groupBy": "source",
+          "datasource": {
+            "type": "asyntai-aichatbot-datasource",
+            "uid": "${DS_ASYNTAI}"
+          }
+        }
+      ],
+      "maxDataPoints": 50
+    },
+    {
+      "type": "timeseries",
+      "title": "Leads",
+      "datasource": {
+        "type": "asyntai-aichatbot-datasource",
+        "uid": "${DS_ASYNTAI}"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 8
+      },
+      "id": 3,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "drawStyle": "bars",
+            "fillOpacity": 60,
+            "lineWidth": 0
+          },
+          "min": 0
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": false
+        }
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "resource": "leads",
+          "format": "timeseries",
+          "groupBy": "none",
+          "datasource": {
+            "type": "asyntai-aichatbot-datasource",
+            "uid": "${DS_ASYNTAI}"
+          }
+        }
+      ],
+      "maxDataPoints": 50
+    },
+    {
+      "type": "timeseries",
+      "title": "Tickets by status",
+      "datasource": {
+        "type": "asyntai-aichatbot-datasource",
+        "uid": "${DS_ASYNTAI}"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 8
+      },
+      "id": 4,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "drawStyle": "bars",
+            "fillOpacity": 60,
+            "lineWidth": 0,
+            "stacking": {
+              "mode": "normal"
+            }
+          },
+          "min": 0
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        }
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "resource": "tickets",
+          "format": "timeseries",
+          "groupBy": "status",
+          "datasource": {
+            "type": "asyntai-aichatbot-datasource",
+            "uid": "${DS_ASYNTAI}"
+          }
+        }
+      ],
+      "maxDataPoints": 50
+    },
+    {
+      "type": "table",
+      "title": "Recent chats",
+      "datasource": {
+        "type": "asyntai-aichatbot-datasource",
+        "uid": "${DS_ASYNTAI}"
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 24,
+        "x": 0,
+        "y": 16
+      },
+      "id": 5,
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "options": {
+        "showHeader": true
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "resource": "sessions",
+          "format": "table",
+          "groupBy": "none",
+          "limit": 100,
+          "datasource": {
+            "type": "asyntai-aichatbot-datasource",
+            "uid": "${DS_ASYNTAI}"
+          }
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "title": "Recent leads",
+      "datasource": {
+        "type": "asyntai-aichatbot-datasource",
+        "uid": "${DS_ASYNTAI}"
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 24,
+        "x": 0,
+        "y": 26
+      },
+      "id": 6,
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "options": {
+        "showHeader": true
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "resource": "leads",
+          "format": "table",
+          "groupBy": "none",
+          "limit": 100,
+          "datasource": {
+            "type": "asyntai-aichatbot-datasource",
+            "uid": "${DS_ASYNTAI}"
+          }
+        }
+      ]
+    }
+  ],
+  "refresh": "",
+  "schemaVersion": 39,
+  "tags": [
+    "asyntai",
+    "chatbot"
+  ],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-30d",
+    "to": "now"
+  },
+  "timezone": "browser",
+  "title": "Asyntai overview",
+  "uid": "asyntai-overview",
+  "version": 1,
+  "weekStart": ""
+}
