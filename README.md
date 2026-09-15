@@ -1,11 +1,14 @@
 # Asyntai AI Chatbot data source for Grafana
 
-Put your [Asyntai](https://asyntai.com) numbers on a Grafana dashboard, next to
-everything else you already watch.
+Your chatbot answers visitors all day and all night. This data source puts
+what it did on the dashboard your team already watches.
 
-Asyntai is an AI chatbot that answers the visitors on your website. This data
-source brings what it does into Grafana: how many people it talked to, what
-they asked, who left an email address, and which tickets came out of it.
+See how many questions it handled, and you know what nobody had to answer by
+hand. See what people keep asking, and you know which page to fix. See who
+left an email address, and the sales team has real leads. See which
+conversations became tickets, and how fast the first reply went out.
+
+[Asyntai](https://asyntai.com) is the AI chatbot that does the answering.
 
 ## What you can chart
 
@@ -16,8 +19,8 @@ they asked, who left an email address, and which tickets came out of it.
 | Tickets | Tickets per hour or per day, split by status, priority or channel | Ticket number, subject, status, priority, who it is assigned to, first reply, resolved time |
 | Messages of one chat | — | The whole conversation, message by message |
 
-The plugin ships a ready dashboard called **Asyntai overview**. Import it from
-the data source page and you have six panels without building anything.
+A ready dashboard called **Asyntai overview** comes with the plugin. Import it
+from the data source page and you have six panels in one click.
 
 ## Install
 

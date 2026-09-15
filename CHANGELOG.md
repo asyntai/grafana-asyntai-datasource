@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.1
+
+- Clearer words on the listing page and in the README.
+
 ## 1.0.0
 
 First release.

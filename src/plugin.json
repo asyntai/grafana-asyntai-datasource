@@ -6,7 +6,7 @@
     "metrics": true,
     "backend": false,
     "info": {
-        "description": "Put your Asyntai AI Chatbot numbers on a Grafana dashboard: chats, leads, tickets and the questions visitors ask.",
+        "description": "See what your website chatbot is doing for the business: who it helped, what they kept asking, and how many became leads.",
         "author": {
             "name": "Asyntai",
             "url": "https://asyntai.com"
@@ -38,7 +38,7 @@
         ],
         "screenshots": [
             {
-                "name": "Your chatbot numbers on one dashboard",
+                "name": "Everything your chatbot did, on one dashboard",
                 "path": "img/screenshot-overview.png"
             },
             {
@@ -46,7 +46,7 @@
                 "path": "img/screenshot-where-from.png"
             },
             {
-                "name": "Read any conversation in Grafana",
+                "name": "Read any conversation without leaving Grafana",
                 "path": "img/screenshot-conversation.png"
             }
         ],
